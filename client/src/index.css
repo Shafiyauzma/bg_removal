@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=PT+Sans:ital@0;1&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: Outfit;
+    /* background-color: #FFFFFF; */
+    /* background-color: #F4F4F5; */
+    /* background-color: #FAF3E0; */
+    /* background: linear-gradient(to right, #EDE9FE, #F0FFF4); */
+
+}
+
+.slider {
+    -webkit-appearance: none;
+    height: 100%;
+    background: transparent;
+}
+
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 30px;
+    min-height: 30px;
+    background-image: url(/slide_icon.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-layer {
+    /* width:500px; */
+    background-image: url(/bg_layer.png);
+    background-size: cover;
+    width: 500px;
+}
+@media (max-width: 768px) {
+    .bg-layer {
+        max-width: 280px; /* Adjust width for smaller screens */
+    }
+}
