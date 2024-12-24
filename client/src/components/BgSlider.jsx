@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { assets } from '../assets/assets'
+import {motion} from 'framer-motion'
 
 const BgSlider = () => {
 
@@ -10,13 +11,19 @@ const BgSlider = () => {
     }
 
   return (
-    <div className='pb-10 md:py-15 mx-2'>
+    <motion.div 
+     initial={{ opacity:0.2,y:100 }} 
+     transition={{ duration:1 }}
+     whileInView={{ opacity:1,y:0 }}
+     viewport={{ once: true }}
+     className='pb-10 md:py-15 mx-2'
+    >
         {/* Title */}
         <h1 className='mb-12 sm:mb-20 text-center text-2xl md:text-3xl lg-text-4xl font-semibold bg-gradient-to-r from-gray-900 to-gray-400 bg-clip-text text-transparent '>
             Remove Background With High <br/> Quality and Accuracy
         </h1>
 
-        <div className='relative w-full max-w-3xl overflow-hidden m-auto rounded-xl '>
+        <div className='relative w-full max-w-3xl overflow-hidden m-auto rounded-xl mb-12'>
             {/* background image to get image first half percentage */}
             <img  src={assets.image_w_bg} style={{clipPath:`inset(0 ${100.2-sliderPosition}% 0 0)`}} alt="" />
 
@@ -29,7 +36,7 @@ const BgSlider = () => {
         </div>
 
       
-    </div>
+    </motion.div>
   )
 }
 
